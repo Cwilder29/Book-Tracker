@@ -10,7 +10,6 @@ import { BooksComponent } from './components/books/books.component';
 import { BookItemComponent } from './components/book-item/book-item.component';
 import { AddBookComponent } from './components/add-book/add-book.component';
 import { AddButtonComponent } from './components/button/add-button/add-button.component';
-import { SaveButtonComponent } from './components/button/save-button/save-button.component';
 
 const appRoutes: Routes = [
   {path: '', component: BooksComponent},
@@ -23,8 +22,7 @@ const appRoutes: Routes = [
     BooksComponent,
     BookItemComponent,
     AddBookComponent,
-    AddButtonComponent,
-    SaveButtonComponent
+    AddButtonComponent
   ],
   imports: [
     BrowserModule,
