@@ -4,3 +4,19 @@
     padding: 10px 20px;
     cursor: pointer;
 }
+
+table {
+}
+
+td {
+    font-size: 11pt;
+}
+
+.icon {
+    width: 15px;
+    height: 15px;
+    margin-left: 3px;
+    margin-right: 6px;
+    position: relative;
+    top: 2px;
+}
