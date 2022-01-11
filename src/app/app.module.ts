@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { BooksComponent } from './components/books/books.component';
 import { BookItemComponent } from './components/book-item/book-item.component';
+import { AddBookComponent } from './components/add-book/add-book.component';
 
 const appRoutes: Routes = [
   {path: '', component: BooksComponent},
@@ -18,7 +19,8 @@ const appRoutes: Routes = [
     AppComponent,
     HeaderComponent,
     BooksComponent,
-    BookItemComponent
+    BookItemComponent,
+    AddBookComponent
   ],
   imports: [
     BrowserModule,

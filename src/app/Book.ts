@@ -3,6 +3,6 @@ export interface Book {
     title: string,
     author: string,
     ownership: boolean,
-    finished: boolean,
+    hasRead: boolean,
     nowReading: boolean
 }

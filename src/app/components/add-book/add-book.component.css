@@ -1,0 +1,21 @@
+.add-form {
+    margin-top: 20px;
+    margin-bottom: 25px;
+    background: #f4f4f4;
+}
+
+h3 {
+    text-align: center;
+}
+
+.tableText {
+    border-spacing: 10px 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.tableCheckbox {
+    border-spacing: 8px 0px;
+}
