@@ -19,3 +19,8 @@ h3 {
 .tableCheckbox {
     border-spacing: 8px 0px;
 }
+
+.tableBtn {
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -3,45 +3,31 @@
 
     <table class="tableText">
         <tr>
-            <td>
-                <label for="title">Book Title</label>
-            </td>
-            <td>
-                <input type="text" name="title" [(ngModel)]="title" id="title" placeholder="Add Book Title">
-            </td>
+            <td><label for="title">Book Title</label></td>
+            <td><input type="text" name="title" [(ngModel)]="title" id="title" placeholder="Add Book Title"></td>
         </tr>
         <tr>
-            <td>
-                <label for="author">Author</label>
-            </td>
-            <td>
-                <input type="text" name="author" [(ngModel)]="author" id="author" placeholder="Add Author(s)">
-            </td>
+            <td><label for="author">Author</label></td>
+            <td><input type="text" name="author" [(ngModel)]="author" id="author" placeholder="Add Author(s)"></td>
         </tr>
     </table>
 
     <table class="tableCheckbox">
         <tr>
-            <td>
-                <label for="ownership">Own Book?</label>
-            </td>
-            <td>
-                <input type="checkbox" name="ownership" [(ngModel)]="ownership" id="ownership">
-            </td>
+            <td><label for="ownership">Own Book?</label></td>
+            <td><input type="checkbox" name="ownership" [(ngModel)]="ownership" id="ownership"></td>
 
-            <td>
-                <label for="hasRead">Have Read?</label>
-            </td>
-            <td>
-                <input type="checkbox" name="hasRead" [(ngModel)]="hasRead" id="hasRead">
-            </td>
+            <td><label for="hasRead">Have Read?</label></td>
+            <td><input type="checkbox" name="hasRead" [(ngModel)]="hasRead" id="hasRead"></td>
 
-            <td>
-                <label for="nowReading">Currently Reading?</label>
-            </td>
-            <td>
-                <input type="checkbox" name="nowReading" [(ngModel)]="nowReading" id="nowReading">
-            </td>
+            <td><label for="nowReading">Currently Reading?</label></td>
+            <td><input type="checkbox" name="nowReading" [(ngModel)]="nowReading" id="nowReading"></td>
+        </tr>
+    </table>
+
+    <table class="tableBtn">
+        <tr>
+            <button class="btn">Save Book</button>
         </tr>
     </table>
 </form>
