@@ -20,4 +20,8 @@ export class BookService {
   getBooks(): Observable<Book[]> {    
     return this.http.get<Book[]>(this.apiURL);
   }
+
+  addBook(book: Book): Observable<Book> {
+    return this.http.post<Book>(this.apiURL, book, httpOptions);
+  } 
 }

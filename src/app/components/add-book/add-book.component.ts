@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Book } from '../../Book';
 
 @Component({
   selector: 'app-add-book',
@@ -6,15 +7,39 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-book.component.css']
 })
 export class AddBookComponent implements OnInit {
+  @Output() onAddBook: EventEmitter<Book> = new EventEmitter();
   title: string;
   author: string;
-  ownership: boolean;
-  hasRead: boolean;
-  nowReading: boolean;
+  ownership: boolean = false;
+  hasRead: boolean = false;
+  nowReading: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit() {
+    if(!this.title) {
+      alert('Please add a title!');
+      return;
+    }
+
+    const newBook = {
+      title: this.title,
+      author: this.author,
+      ownership: this.ownership,
+      hasRead: this.hasRead,
+      nowReading: this.nowReading
+    }
+
+    this.onAddBook.emit(newBook);
+
+    this.title = '';
+    this.author = '';
+    this.ownership = false;
+    this.hasRead = false;
+    this.nowReading = false;
   }
 
 }

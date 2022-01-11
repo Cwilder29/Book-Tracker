@@ -20,6 +20,10 @@ export class BooksComponent implements OnInit {
 
   // deleteBook()
 
-  // addBook()
+  addBook(book: Book) {
+    this.bookService.addBook(book).subscribe((book) => (this.books.push(book)));
+    console.log('Creating new book');
+    
+  }
 
 }
