@@ -5,13 +5,13 @@
     <table>
         <tr>
             <td>
-                Own <img class="icon" src={{ownershipIcon}} alt="">
+                Own <img class="icon" (click)="changeOwnership(book)" src={{ownershipIcon}} alt="">
             </td>
             <td>
-                Read <img class="icon" src={{hasReadIcon}} alt="">
+                Read <img class="icon" (click)="changeHaveRead(book)" src={{hasReadIcon}} alt="">
             </td>
             <td>
-                In Progress <img class="icon" src={{nowReadingIcon}} alt="">
+                In Progress <img class="icon" (click)="changeNowReading(book)" src={{nowReadingIcon}} alt="">
             </td>
         </tr>
     </table>

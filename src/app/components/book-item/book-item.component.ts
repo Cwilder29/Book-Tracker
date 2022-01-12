@@ -16,30 +16,37 @@ export class BookItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    if (this.book.ownership) {
-      this.ownershipIcon = '../../../assets/green-checkmark.png';
-    }
-    else {
-      this.ownershipIcon = '../../../assets/red-x.png';
-    }
-
-    if (this.book.hasRead) {
-      this.hasReadIcon = '../../../assets/green-checkmark.png'
-    }
-    else {
-      this.hasReadIcon = '../../../assets/red-x.png'
-    }
-
-    if (this.book.nowReading) {
-      this.nowReadingIcon = '../../../assets/green-checkmark.png'
-    }
-    else {
-      this.nowReadingIcon = '../../../assets/red-x.png'
-    }
+    this.ownershipIcon = this.setIcon(this.book.ownership);
+    this.hasReadIcon = this.setIcon(this.book.hasRead);
+    this.nowReadingIcon = this.setIcon(this.book.nowReading);
   }
 
   onDelete(book) {
     this.onDeleteBook.emit(book);
+  }
+
+  changeOwnership(book: Book) {
+    book.ownership = !book.ownership;
+    this.ownershipIcon = this.setIcon(book.ownership);
+  }
+
+  changeHaveRead(book: Book) {
+    book.hasRead = !book.hasRead;
+    this.hasReadIcon = this.setIcon(book.hasRead);
+  }
+
+  changeNowReading(book: Book) {
+    book.nowReading = !book.nowReading;
+    this.nowReadingIcon = this.setIcon(book.nowReading);
+  }
+
+  private setIcon(value: boolean): string {
+    if (value) {
+      return '../../../assets/green-checkmark.png';
+    }
+    else {
+      return '../../../assets/red-x.png';
+    }
   }
 
 }
