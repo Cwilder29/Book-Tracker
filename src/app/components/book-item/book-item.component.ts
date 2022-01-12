@@ -9,6 +9,7 @@ import { Book } from '../../Book';
 export class BookItemComponent implements OnInit {
   @Input() book: Book;
   @Output() onDeleteBook: EventEmitter<Book> = new EventEmitter();
+  @Output() onUpdateBook: EventEmitter<Book> = new EventEmitter();
   ownershipIcon: string;
   hasReadIcon: string;
   nowReadingIcon: string;
@@ -28,16 +29,24 @@ export class BookItemComponent implements OnInit {
   changeOwnership(book: Book) {
     book.ownership = !book.ownership;
     this.ownershipIcon = this.setIcon(book.ownership);
+    this.updateBook(book);
   }
 
   changeHaveRead(book: Book) {
     book.hasRead = !book.hasRead;
     this.hasReadIcon = this.setIcon(book.hasRead);
+    this.updateBook(book);
+
   }
 
   changeNowReading(book: Book) {
     book.nowReading = !book.nowReading;
     this.nowReadingIcon = this.setIcon(book.nowReading);
+    this.updateBook(book);
+  }
+
+  private updateBook(book: Book) {
+    this.onUpdateBook.emit(book);
   }
 
   private setIcon(value: boolean): string {
