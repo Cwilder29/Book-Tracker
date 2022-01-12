@@ -17,3 +17,13 @@ td {
     position: relative;
     top: 2px;
 }
+
+#deleteIcon {
+    float: right;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    border-spacing: 30px 0px;
+}

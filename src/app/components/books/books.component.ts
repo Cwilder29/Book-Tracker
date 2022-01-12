@@ -18,7 +18,11 @@ export class BooksComponent implements OnInit {
     
   }
 
-  // deleteBook()
+  deleteBook(book: Book) {
+    this.bookService.deleteBook(book).subscribe(
+      () => (this.books = this.books.filter(t => t.id !== book.id))
+    );
+  }
 
   addBook(book: Book) {
     this.bookService.addBook(book).subscribe((book) => (this.books.push(book)));

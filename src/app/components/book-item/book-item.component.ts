@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Book } from '../../Book';
 
 @Component({
@@ -8,6 +8,7 @@ import { Book } from '../../Book';
 })
 export class BookItemComponent implements OnInit {
   @Input() book: Book;
+  @Output() onDeleteBook: EventEmitter<Book> = new EventEmitter();
   ownershipIcon: string;
   hasReadIcon: string;
   nowReadingIcon: string;
@@ -35,6 +36,10 @@ export class BookItemComponent implements OnInit {
     else {
       this.nowReadingIcon = '../../../assets/red-x.png'
     }
+  }
+
+  onDelete(book) {
+    this.onDeleteBook.emit(book);
   }
 
 }
