@@ -1,4 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { UiService } from '../../services/ui.service';
+import { Subscription } from 'rxjs';
 import { Book } from '../../Book';
 
 @Component({
@@ -13,8 +15,12 @@ export class AddBookComponent implements OnInit {
   ownership: boolean = false;
   hasRead: boolean = false;
   nowReading: boolean = false;
+  showAddBook: boolean;
+  subscription: Subscription;
 
-  constructor() { }
+  constructor(private uiService: UiService) {
+    this.subscription = this.uiService.onToggle().subscribe(value => this.showAddBook = value);
+  }
 
   ngOnInit(): void {
   }
