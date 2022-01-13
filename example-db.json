@@ -1,0 +1,12 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "Book Title",
+      "author": "Author",
+      "ownership": false,
+      "hasRead": false,
+      "nowReading": false
+    }
+  ]
+}
