@@ -11,6 +11,7 @@
     </table>
 
     <app-add-button
+        *ngIf="hasRoute('/')"
         color="{{ showAddBook ? '#F35555' : 'rgb(126, 198, 223)' }}" 
         text="{{ showAddBook ? 'Close' : 'Add Books' }}" 
         (btnClick)="toggleAddBook()"
